@@ -250,12 +250,12 @@
     </div>
 
     <div id="selectGallery" class="gallery scroll-gallery show">
-        <div id="appleScrollContainer" class="scroll-container overflow-x-auto no-scrollbar scroll-smooth touch-pan-y" tabindex="-1">
+        <div id="appleScrollContainer" class="scroll-container w-full overflow-x-auto no-scrollbar scroll-smooth touch-pan-x" tabindex="-1" style="-webkit-overflow-scrolling: touch;">
             <div class="item-container w-max">
                 <ul id="projectContainer" 
-                    class="flex snap-x snap-mandatory gap-6 pb-12" 
-                    role="list" 
-                    style="padding-left: calc((100vw - min(1280px, 100vw - 48px)) / 2); padding-right: 1.5rem;">
+				class="flex snap-x snap-mandatory gap-6 pb-12" 
+				role="list" 
+				style="padding-left: max(1.5rem, calc((100vw - 1280px) / 2)); padding-right: 1.5rem;">
                     
                     <li class="flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
                         <div class="glass-card rounded-2xl p-8 transition-all h-[520px] flex flex-col justify-between shadow-2xl">
