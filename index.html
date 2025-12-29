@@ -1,487 +1,105 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeremy Manalo | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandDark: '#0b1e33',
-                        brandNavy: '#013c58',
-                        brandBlue: '#00537a',
-                        brandGold: '#f5a201',
-                        brandYellow: '#ffba42',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap');
-        
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #0b1e33;
-            color: white;
-        }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .snap-x {
-            scroll-snap-type: x mandatory;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .snap-x::-webkit-scrollbar { display: none; }
-        .snap-center { scroll-snap-align: center; }
-        
-        section { display: block; width: 100%; }
-
-        /* Animation for the scroll indicator */
-        @keyframes bounce-slow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-        }
-        .animate-bounce-slow {
-            animation: bounce-slow 2s infinite;
-        }
-    </style>
-</head>
-<body class="overflow-x-hidden">
-
-    <nav class="fixed w-full z-50 bg-brandDark/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-extrabold tracking-tighter text-brandGold uppercase">Jeremy Manalo</a>
-            <div id="nav-links" class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
-				<a href="#home" data-section="home" class="nav-link hover:text-brandGold transition-colors text-white">Home</a>
-				<a href="#cv-resume" data-section="cv-resume" class="nav-link hover:text-brandGold transition-colors text-white">CV/Resume</a>
-				<a href="#projects" data-section="projects" class="nav-link hover:text-brandGold transition-colors text-white">Projects</a>
-				<a href="#contactme" data-section="contactme" class="nav-link hover:text-brandGold transition-colors text-white">Contact Me</a>
-			</div>
-        </div>
-    </nav>
-
-<section id="home" class="relative min-h-screen flex items-center pt-20 px-6 bg-brandDark">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
-        <div data-aos="fade-up">
-            <h2 class="text-brandGold mono text-sm font-bold mb-4 tracking-widest uppercase">// Professional Profile</h2>
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-2">Jeremy Manalo</h1>
-            <h2 class="text-brandGold text-2xl md:text-3xl font-extrabold leading-tight mb-6">Data Analytics Program Manager</h2>
-            
-            <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-xl">
-                Hello! This is a collection of my personal projects made during free time.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-6 border-t border-brandBlue/30 pt-8">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-location-dot text-brandGold"></i>
-                    <span class="text-xs font-bold uppercase tracking-wider text-white">Newark, CA</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="relative flex justify-center items-center" data-aos="zoom-in">
-            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-dashed border-brandBlue/50 flex items-center justify-center relative">
-                <div class="w-48 h-48 md:w-60 md:h-60 bg-brandNavy/30 border border-brandBlue rounded-full flex items-center justify-center shadow-2xl shadow-brandBlue/20">
-                    <i class="fa-solid fa-database text-6xl text-brandGold opacity-80"></i>
-                </div>
-          
-            </div>
-        </div>
-    </div>
-
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <span class="mono text-[10px] uppercase tracking-widest">Explore</span>
-        <i class="fa-solid fa-chevron-down animate-bounce text-brandGold"></i>
-    </div>
-</section>
-
-<section id="cv-resume" class="py-20 bg-brandNavy/30 px-6 block">
-    <div class="max-w-7xl mx-auto">
-        <div class="mb-12" data-aos="fade-right">
-            <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">01. Curriculum Vitae</h2>
-            <h3 class="text-4xl font-extrabold tracking-tight text-white">CV/Resume</h3>
-        </div>
-
-        <div class="mb-8">
-            <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-6">Technical Skills</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="p-6 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up">
-                    <i class="fa-solid fa-code text-brandGold mb-4 text-xl"></i>
-                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Languages</h4>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">Python (Pandas, NumPy, Scikit-learn), SQL, R, RStudio</p>
-                </div>
-                <div class="p-6 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-cloud text-brandGold mb-4 text-xl"></i>
-                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Cloud Infrastructure</h4>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">Google Cloud Platform (GCP), Amazon Web Services (AWS)</p>
-                </div>
-                <div class="p-6 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-gears text-brandGold mb-4 text-xl"></i>
-                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Data Engineering</h4>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">BigQuery, Redshift, S3, AWS Glue, Snowflake, ETL/ELT</p>
-                </div>
-                <div class="p-6 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-chart-pie text-brandGold mb-4 text-xl"></i>
-                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Business Intelligence</h4>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">Tableau, Power BI, Looker Studio, PLX, Reporting</p>
-                </div>
-				<div class="p-6 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="400">
-					<i class="fa-solid fa-chart-line text-brandGold mb-4 text-xl"></i>
-					<h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Analytical Methods</h4>
-					<p class="text-xs text-slate-300 leading-relaxed italic">Statistical Analysis, Time Series, ROI Modeling, RCA</p>
-				</div>
-            </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-12 mt-40">
-            <div class="md:col-span-1">
-                <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-8">Education</h4>
-                <div class="space-y-8">
-                    <div>
-                        <p class="text-brandYellow font-bold">M.S., Business Analytics</p>
-                        <p class="text-xs text-slate-400 uppercase">CSU East Bay (2024)</p>
-                    </div>
-                    <div>
-                        <p class="text-brandYellow font-bold">B.S., Information Technology</p>
-                        <p class="text-xs text-slate-400 uppercase">CSU East Bay (2017)</p>
-                    </div>
-                    <div>
-                        <p class="text-brandYellow font-bold">A.S., Math and Science</p>
-                        <p class="text-xs text-slate-400 uppercase">San Joaquin Delta College (2015)</p>
-                    </div>
-                    <div>
-                        <p class="text-brandYellow font-bold">A.A., Business</p>
-                        <p class="text-xs text-slate-400 uppercase">San Joaquin Delta College (2015)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="md:col-span-2">
-                <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-8">Work Experience</h4>
-                <div class="space-y-12 border-l-2 border-brandBlue/50 pl-8 relative">
-                    <div class="relative" data-aos="fade-up">
-                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandGold rounded-full border-4 border-[#06182c]"></div>
-                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Engineering & Analytics Program Manager</h4>
-                        <div class="flex justify-between items-center mb-4 mt-2">
-                            <span class="text-sm font-bold text-white uppercase tracking-wider">ServiceNow (via Pinkerton)</span>
-                            <time class="mono text-[10px] text-brandGold bg-brandDark px-2 py-1 rounded border border-brandBlue/30">Feb 2025 - Present</time>
-                        </div>
-                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
-                            <li>Leading a global security data program, integrating 12+ applications into <b>Power BI</b>.</li>
-                            <li>Developing <b>Snowflake (SQL)</b> queries and <b>Python</b> statistical models.</li>
-                            <li>Defining the department's data roadmap and technical documentation.</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative" data-aos="fade-up">
-                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandBlue rounded-full border-4 border-[#06182c]"></div>
-                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Analyst II</h4>
-                        <div class="flex justify-between items-center mb-4 mt-2">
-                            <span class="text-sm font-bold text-white uppercase tracking-wider">Google (via Astreya)</span>
-                            <time class="mono text-[10px] text-brandGold bg-brandDark px-2 py-1 rounded border border-brandBlue/30">Aug 2021 - Feb 2025</time>
-                        </div>
-                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
-                            <li>Engineered data products using <b>PLX (SQL)</b> for global supply chain visibility.</li>
-                            <li>Automated workflows, reducing manual processing time by 50%.</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative" data-aos="fade-up">
-                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandBlue rounded-full border-4 border-[#06182c]"></div>
-                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Analyst II</h4>
-                        <div class="flex justify-between items-center mb-4 mt-2">
-                            <span class="text-sm font-bold text-white uppercase tracking-wider">Meta (via Milestone)</span>
-                            <time class="mono text-[10px] text-brandGold bg-brandDark px-2 py-1 rounded border border-brandBlue/30">Jun 2019 - Aug 2021</time>
-                        </div>
-                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
-                            <li>Increased reporting efficiency by 85% leveraging <b>Python (Pandas, NumPy)</b>.</li>
-                            <li>Designed <b>Tableau</b> and <b>Looker Studio</b> dashboards for global training.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style>
-
 <section id="projects" class="py-24 bg-brandDark overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 mb-12">
         <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
             <div data-aos="fade-right">
-                <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase italic">02. Portfolios</h2>
+                <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">02. Portfolio</h2>
                 <h3 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">Project Lineup.</h3>
             </div>
             <div class="flex gap-4">
-                <button onclick="scrollProjects(-420)" class="p-4 border border-brandBlue rounded-full hover:bg-brandBlue transition-all group">
+                <button onclick="scrollGallery(-420)" class="p-4 border border-brandBlue rounded-full hover:bg-brandBlue transition-all group">
                     <i class="fa-solid fa-chevron-left text-brandGold group-hover:text-white"></i>
                 </button>
-                <button onclick="scrollProjects(420)" class="p-4 border border-brandBlue rounded-full hover:bg-brandBlue transition-all group">
+                <button onclick="scrollGallery(420)" class="p-4 border border-brandBlue rounded-full hover:bg-brandBlue transition-all group">
                     <i class="fa-solid fa-chevron-right text-brandGold group-hover:text-white"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <div id="projectContainer" 
-         class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 no-scrollbar scroll-smooth" 
-         style="padding-left: max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem)); padding-right: 2rem;">
-        
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Data Engineering</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Enterprise Data Lakehouse</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">A unified Delta Lake architecture serving 500+ daily BI users with automated schema evolution.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Azure</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">PySpark</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+    <div id="selectGallery" class="gallery gallery-product-tile-set scroll-gallery show">
+        <div id="appleScrollContainer" class="scroll-container overflow-x-auto no-scrollbar scroll-smooth" tabindex="-1">
+            <div class="item-container w-max">
+                <ul id="projectContainer" 
+                    class="product-tile-set flex snap-x snap-mandatory gap-6 pb-12" 
+                    role="list" 
+                    style="padding-left: calc((100vw - min(1280px, 100vw - 48px)) / 2); padding-right: 1.5rem;">
+                    
+                    <li class="product-tile gallery-item flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
+                        <div class="bg-brandDark border border-brandBlue rounded-2xl p-8 hover:border-brandGold transition-all h-[500px] flex flex-col justify-between">
+                            <div>
+                                <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Data Engineering</span>
+                                <h4 class="text-2xl font-bold mb-4 text-white">Enterprise Data Lakehouse</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">A unified Delta Lake architecture serving 500+ daily BI users with automated schema evolution and ACID transactions.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Azure</span>
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">PySpark</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+                        </div>
+                    </li>
+
+                    <li class="product-tile gallery-item flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
+                        <div class="bg-brandDark border border-brandBlue rounded-2xl p-8 hover:border-brandGold transition-all h-[500px] flex flex-col justify-between">
+                            <div>
+                                <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Predictive Analytics</span>
+                                <h4 class="text-2xl font-bold mb-4 text-white">Supply Chain Demand Forecasting</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">Ensemble learning models achieving 94% accuracy in predicting inventory lead times across global hubs.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Python</span>
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Scikit-Learn</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+                        </div>
+                    </li>
+
+                    <li class="product-tile gallery-item flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
+                        <div class="bg-brandDark border border-brandBlue rounded-2xl p-8 hover:border-brandGold transition-all h-[500px] flex flex-col justify-between">
+                            <div>
+                                <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">BI & Visualization</span>
+                                <h4 class="text-2xl font-bold mb-4 text-white">Global Security Risk Dashboard</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">Consolidated 12+ security data sources into a unified executive view for real-time RCA and threat mitigation.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Power BI</span>
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Snowflake</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+                        </div>
+                    </li>
+
+                    <li class="product-tile gallery-item flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
+                        <div class="bg-brandDark border border-brandBlue rounded-2xl p-8 hover:border-brandGold transition-all h-[500px] flex flex-col justify-between">
+                            <div>
+                                <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Marketing Analytics</span>
+                                <h4 class="text-2xl font-bold mb-4 text-white">Multi-Touch ROI Attribution</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom Markov-chain attribution model to optimize ad spend across digital channels for high-growth tech firms.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">R</span>
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">BigQuery</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+                        </div>
+                    </li>
+
+                    <li class="product-tile gallery-item flex-none w-[85vw] md:w-[400px] snap-start" role="listitem">
+                        <div class="bg-brandDark border border-brandBlue rounded-2xl p-8 hover:border-brandGold transition-all h-[500px] flex flex-col justify-between">
+                            <div>
+                                <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">NLP & Automation</span>
+                                <h4 class="text-2xl font-bold mb-4 text-white">Sentiment Intelligence Hub</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">Processing 1M+ customer reviews using BERT to identify trending service friction points automatically.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">TensorFlow</span>
+                                    <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">GCP</span>
+                                </div>
+                            </div>
+                            <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Security & Compliance</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Data Compliance Engine</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Automated PII detection and masking system for global HIPAA and GDPR regulated markets.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Security</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Python</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">AI & ML</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Predictive Supply Chain</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Forecasting inventory demand with 94% accuracy using ensemble learning models.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Scikit-Learn</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Tableau</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Infrastructure</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Real-Time Event Hub</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Kafka streaming platform processing 10k+ events/sec for real-time personalization.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Kafka</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">AWS</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">BI</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Global Security BI</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Unified dashboard integrating 12+ security applications for executive risk review.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Power BI</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">SQL</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Automation</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Automated ETL Pipeline</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Orchestration of marketing data from 20+ APIs into Snowflake with quality checks.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Airflow</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Snowflake</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Cybersecurity</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Threat Intelligence Hub</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Real-time threat detection leveraging BigQuery ML for pattern recognition.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">GCP</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Looker</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Marketing</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">ROI Attribution Model</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom multi-touch attribution engine calculating ROI across diverse channels.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">R</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">SQL</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">NLP</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Sentiment Engine</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Processing 1M+ reviews to identify trending service issues via NLP.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">TensorFlow</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Python</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-        <div class="flex-none w-[85vw] md:w-[400px] snap-start">
-            <div class="bg-gradient-to-b from-brandNavy/40 to-brandDark border border-brandBlue/50 rounded-[2.5rem] p-8 hover:border-brandGold/50 transition-all h-[500px] flex flex-col justify-between group">
-                <div>
-                    <span class="text-brandGold mono text-[10px] font-bold tracking-widest uppercase mb-4 block">Supply Chain</span>
-                    <h4 class="text-2xl font-bold mb-4 text-white leading-tight">Inventory Health Monitor</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Real-time monitoring for warehouse stock, reducing stock-outs by 30%.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">Pandas</span>
-                        <span class="text-[10px] text-slate-300 border border-white/10 px-3 py-1 rounded-full bg-white/5 uppercase">GCP</span>
-                    </div>
-                </div>
-                <a href="#" class="text-brandGold font-bold text-sm italic underline underline-offset-8">Learn more ></a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<script>
-    function scrollProjects(amount) {
-        const container = document.getElementById('projectContainer');
-        container.scrollBy({
-            left: amount,
-            behavior: 'smooth'
-        });
-    }
-</script>
-
-<section id="contactme" class="py-24 bg-brandNavy/30 px-6 relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brandBlue/10 blur-[120px] rounded-full -z-10"></div>
-
-    <div class="max-w-4xl mx-auto text-center">
-        <div class="mb-12" data-aos="fade-up">
-            <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">03. Contact</h2>
-            <h3 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">Let's Build Something <span class="text-brandYellow">Data-Driven</span></h3>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                Reach out via the platforms below.
-            </p>
-        </div>
-
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6" data-aos="zoom-in" data-aos-delay="200">
-            <a href="https://www.linkedin.com/in/jeremymanalo/" target="_blank" class="group relative flex items-center gap-4 px-10 py-5 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-all duration-300 min-w-[240px]">
-                <div class="text-3xl text-brandGold group-hover:scale-110 transition-transform">
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
-                <div class="text-left">
-                    <p class="text-lg font-bold text-white uppercase tracking-tight">LinkedIn</p>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-[10px] opacity-30 group-hover:opacity-100 text-brandGold"></i>
-            </a>
-
-            <a href="https://github.com/jeremy-f-manalo" target="_blank" class="group relative flex items-center gap-4 px-10 py-5 bg-brandDark border border-brandBlue rounded-2xl hover:border-brandGold transition-all duration-300 min-w-[240px]">
-                <div class="text-3xl text-brandGold group-hover:scale-110 transition-transform">
-                    <i class="fa-brands fa-github"></i>
-                </div>
-                <div class="text-left">
-                    <p class="text-lg font-bold text-white uppercase tracking-tight">GitHub</p>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-[10px] opacity-30 group-hover:opacity-100 text-brandGold"></i>
-            </a>
         </div>
     </div>
 </section>
-
-<footer class="bg-brandDark border-t border-brandBlue/30 py-10 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="text-slate-500 text-[10px] mono uppercase tracking-widest">
-            Copyright © 2025 All rights reserved
-        </div>
-        </div>
-</footer>
-
-    <script>
-        AOS.init({ once: false, duration: 800 });
-		// Function to handle highlighting
-		const sections = document.querySelectorAll("section");
-		const navLinks = document.querySelectorAll(".nav-link");
-
-		window.addEventListener("scroll", () => {
-			let current = "";
-
-			sections.forEach((section) => {
-				const sectionTop = section.offsetTop;
-				const sectionHeight = section.clientHeight;
-				// Check if scroll position is within the section (with a 200px offset for better UX)
-				if (pageYOffset >= sectionTop - 200) {
-					current = section.getAttribute("id");
-				}
-			});
-
-			navLinks.forEach((link) => {
-				link.classList.remove("text-brandGold");
-				link.classList.add("text-white");
-				if (link.getAttribute("data-section") === current) {
-					link.classList.remove("text-white");
-					link.classList.add("text-brandGold");
-				}
-			});
-		});
-		
-        function scrollProjects(amount) {
-            const container = document.getElementById('projectContainer');
-            container.scrollBy({ left: amount, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
