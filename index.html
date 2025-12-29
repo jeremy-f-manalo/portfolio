@@ -33,8 +33,6 @@
             color: white;
         }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        
-        /* Custom Scroll Snap Gallery */
         .snap-x {
             scroll-snap-type: x mandatory;
             -ms-overflow-style: none;
@@ -42,9 +40,17 @@
         }
         .snap-x::-webkit-scrollbar { display: none; }
         .snap-center { scroll-snap-align: center; }
+        
+        section { display: block; width: 100%; }
 
-        /* Smooth section transitions */
-        section { min-height: 80vh; display: flex; align-items: center; }
+        /* Animation for the scroll indicator */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -54,161 +60,199 @@
             <a href="#" class="text-xl font-extrabold tracking-tighter text-brandGold uppercase">Jeremy Manalo</a>
             <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="#about" class="hover:text-brandGold transition-colors">About</a>
+                <a href="#skills" class="hover:text-brandGold transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-brandGold transition-colors">Projects</a>
-                <a href="#resume" class="hover:text-brandGold transition-colors">Resume</a>
+                <a href="#resume" class="hover:text-brandGold transition-colors">Experience</a>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-up" data-aos-duration="1000">
+    <section id="about" class="relative min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center w-full">
+            <div data-aos="fade-up">
                 <h2 class="text-brandGold mono text-sm font-bold mb-4 tracking-widest uppercase">// Professional Profile</h2>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Data Engineering and Analytics <span class="text-brandYellow">Program Manager</span>
-                </h1>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Data Analytics <span class="text-brandYellow">Program Manager</span></h1>
                 <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-xl">
-                    Architecting scalable data ecosystems and leading cross-functional teams to deliver enterprise-grade analytics. I specialize in bridging the gap between complex engineering requirements and executive-level business intelligence.
+                    Hello! This is a collection of my personal projects made during free time. I am a Data Analytics Program Manager currently refining my skill set in data science.
                 </p>
                 <div class="flex gap-4">
-                    <div class="flex items-center gap-2 px-4 py-2 bg-brandNavy rounded-lg border border-brandBlue">
-                        <i class="fa-solid fa-microchip text-brandGold"></i>
-                        <span class="text-xs font-bold uppercase tracking-tighter">Infrastructure</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-brandNavy rounded-lg border border-brandBlue">
-                        <i class="fa-solid fa-chart-line text-brandGold"></i>
-                        <span class="text-xs font-bold uppercase tracking-tighter">Governance</span>
-                    </div>
+                    <a href="#" class="flex items-center gap-2 px-6 py-3 bg-brandNavy rounded-xl border border-brandBlue hover:border-brandGold transition-all">
+                        <i class="fa-brands fa-linkedin text-brandGold"></i>
+                        <span class="text-xs font-bold uppercase">LinkedIn</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-2 px-6 py-3 bg-brandNavy rounded-xl border border-brandBlue hover:border-brandGold transition-all">
+                        <i class="fa-brands fa-github text-brandGold"></i>
+                        <span class="text-xs font-bold uppercase">GitHub</span>
+                    </a>
                 </div>
             </div>
-            
-            <div class="relative flex justify-center items-center" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="relative flex justify-center items-center" data-aos="zoom-in">
                 <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-dashed border-brandBlue flex items-center justify-center relative">
-                    <div class="w-48 h-48 md:w-60 md:h-60 bg-gradient-to-tr from-brandNavy to-brandBlue rounded-full flex items-center justify-center shadow-2xl shadow-brandBlue/20">
+                    <div class="w-48 h-48 md:w-60 md:h-60 bg-gradient-to-tr from-brandNavy to-brandBlue rounded-full flex items-center justify-center">
                         <i class="fa-solid fa-database text-6xl text-brandGold opacity-80"></i>
                     </div>
-                    <div class="absolute top-0 right-10 w-4 h-4 bg-brandYellow rounded-full animate-pulse"></div>
-                    <div class="absolute bottom-10 left-0 w-3 h-3 bg-brandGold rounded-full animate-bounce"></div>
                 </div>
             </div>
         </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+            <span class="mono text-[10px] uppercase tracking-tighter">Scroll</span>
+            <i class="fa-solid fa-chevron-down animate-bounce-slow text-brandGold"></i>
+        </div>
     </section>
+
+<section id="cv-resume" class="py-20 bg-brandDark px-6 block">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-12" data-aos="fade-right">
+            <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">01. Curriculum Vitae</h2>
+            <h3 class="text-4xl font-extrabold tracking-tight text-white">CV/Resume</h3>
+        </div>
+
+        <div class="mb-8">
+            <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-6">Technical Skills</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="p-6 bg-brandNavy/50 border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up">
+                    <i class="fa-solid fa-code text-brandGold mb-4 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Languages</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Python (Pandas, NumPy, Scikit-learn), SQL, R, RStudio</p>
+                </div>
+                <div class="p-6 bg-brandNavy/50 border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-cloud text-brandGold mb-4 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Cloud Infrastructure</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Google Cloud Platform (GCP), Amazon Web Services (AWS)</p>
+                </div>
+                <div class="p-6 bg-brandNavy/50 border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-gears text-brandGold mb-4 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Data Engineering</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">BigQuery, Redshift, S3, AWS Glue, Snowflake, ETL/ELT</p>
+                </div>
+                <div class="p-6 bg-brandNavy/50 border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-chart-pie text-brandGold mb-4 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Business Intelligence</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Tableau, Power BI, Looker Studio, PLX, Reporting</p>
+                </div>
+                <div class="p-6 bg-brandNavy/50 border border-brandBlue rounded-2xl hover:border-brandGold transition-colors" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fa-solid fa-magnifying-glass-chart text-brandGold mb-4 text-xl"></i>
+                    <h4 class="font-bold text-sm uppercase mb-3 text-brandYellow">Analytical Methods</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Statistical Analysis, Time Series, ROI Modeling, RCA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 mt-20">
+            
+            <div class="md:col-span-1">
+                <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-8">Education</h4>
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-brandYellow font-bold">M.S., Business Analytics</p>
+                        <p class="text-xs text-slate-400 uppercase">CSU East Bay (2024)</p>
+                    </div>
+                    <div>
+                        <p class="text-brandYellow font-bold">B.S., Information Technology</p>
+                        <p class="text-xs text-slate-400 uppercase">CSU East Bay (2017)</p>
+                    </div>
+                    <div>
+                        <p class="text-brandYellow font-bold">A.S., Math and Science</p>
+                        <p class="text-xs text-slate-400 uppercase">San Joaquin Delta College (2015)</p>
+                    </div>
+                    <div>
+                        <p class="text-brandYellow font-bold">A.A., Business</p>
+                        <p class="text-xs text-slate-400 uppercase">San Joaquin Delta College (2015)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-xl font-bold text-white border-b border-brandBlue/30 pb-2 mb-8">Work Experience</h4>
+                <div class="space-y-12 border-l-2 border-brandBlue/30 pl-8 relative">
+                    <div class="relative" data-aos="fade-up">
+                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandGold rounded-full border-4 border-brandDark"></div>
+                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Engineering & Analytics Program Manager</h4>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">ServiceNow (via Pinkerton)</span>
+                            <time class="mono text-[10px] text-brandGold bg-brandNavy px-2 py-1 rounded">Feb 2025 - Present</time>
+                        </div>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
+                            <li>Leading a global security data program, integrating 12+ applications into <b>Power BI</b>.</li>
+                            <li>Developing <b>Snowflake (SQL)</b> queries and <b>Python</b> statistical models.</li>
+                            <li>Defining the department's data roadmap and technical documentation.</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up">
+                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandBlue rounded-full border-4 border-brandDark"></div>
+                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Analyst II</h4>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Google (via Astreya)</span>
+                            <time class="mono text-[10px] text-brandGold bg-brandNavy px-2 py-1 rounded">Aug 2021 - Feb 2025</time>
+                        </div>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
+                            <li>Engineered data products using <b>PLX (SQL)</b> for global supply chain visibility.</li>
+                            <li>Automated workflows, reducing manual processing time by 50%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative" data-aos="fade-up">
+                        <div class="absolute -left-[41px] top-0 w-5 h-5 bg-brandBlue rounded-full border-4 border-brandDark"></div>
+                        <h4 class="text-xl font-bold text-brandYellow leading-none">Data Analyst II</h4>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <span class="text-sm font-bold text-white uppercase tracking-wider">Meta (via Milestone)</span>
+                            <time class="mono text-[10px] text-brandGold bg-brandNavy px-2 py-1 rounded">Jun 2019 - Aug 2021</time>
+                        </div>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc ml-4">
+                            <li>Increased reporting efficiency by 85% leveraging <b>Python (Pandas, NumPy)</b>.</li>
+                            <li>Designed <b>Tableau</b> and <b>Looker Studio</b> dashboards for global training.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="projects" class="py-20 bg-brandNavy/30 block">
         <div class="max-w-7xl mx-auto px-6 mb-10">
             <div class="flex justify-between items-end">
                 <div data-aos="fade-right">
-                    <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase italic">01. Portfolios</h2>
-                    <h3 class="text-4xl font-extrabold tracking-tight italic">Project Gallery</h3>
+                    <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">02. Portfolios</h2>
+                    <h3 class="text-4xl font-extrabold tracking-tight">Project Gallery</h3>
                 </div>
-                <p class="text-slate-400 text-sm hidden md:block italic">Scroll horizontally to explore &rarr;</p>
+                <div class="flex gap-4">
+                    <button onclick="scrollProjects(-450)" class="p-3 border border-brandBlue rounded-full hover:bg-brandBlue transition-colors">
+                        <i class="fa-solid fa-chevron-left text-brandGold"></i>
+                    </button>
+                    <button onclick="scrollProjects(450)" class="p-3 border border-brandBlue rounded-full hover:bg-brandBlue transition-colors">
+                        <i class="fa-solid fa-chevron-right text-brandGold"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 pb-10 max-w-7xl mx-auto">
-            
-            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-01" data-analytics-category="Engineering">
+        <div id="projectContainer" class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 pb-10 max-w-7xl mx-auto scroll-smooth">
+            <div class="flex-none w-full md:w-[450px] snap-center">
                 <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
                             <i class="fa-solid fa-layer-group text-2xl group-hover:text-brandDark"></i>
                         </div>
-                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-01</span>
+                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">PRJ-01</span>
                     </div>
                     <h4 class="text-2xl font-bold mb-4">Enterprise Data Lakehouse Migration</h4>
-                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Migrated legacy siloed architecture to a unified Delta Lake on Databricks, serving 500+ daily BI users.</p>
+                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Migrated legacy siloed architecture to a unified Delta Lake on Databricks.</p>
                     <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Azure</span>
                         <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">PySpark</span>
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Governance</span>
                     </div>
                 </div>
             </div>
-
-            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-02" data-analytics-category="Management">
-                <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
-                            <i class="fa-solid fa-diagram-project text-2xl group-hover:text-brandDark"></i>
-                        </div>
-                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-02</span>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4">Automated Data Compliance Engine</h4>
-                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Built an automated PII detection and masking pipeline for HIPAA/GDPR compliance across 14 global markets.</p>
-                    <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Security</span>
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Python</span>
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">DevOps</span>
-                    </div>
-                </div>
             </div>
-
-            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-03" data-analytics-category="Analytics">
-                <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
-                            <i class="fa-solid fa-chart-pie text-2xl group-hover:text-brandDark"></i>
-                        </div>
-                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-03</span>
-                    </div>
-                    <h4 class="text-2xl font-bold mb-4">Supply Chain Predictive Analytics</h4>
-                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Forecasted inventory requirements with 94% accuracy using ensemble learning, saving $2M in annual overhead.</p>
-                    <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Scikit-Learn</span>
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">SQL</span>
-                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Tableau</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="resume" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto w-full">
-            <div class="mb-16" data-aos="fade-up">
-                <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">02. Career</h2>
-                <h3 class="text-4xl font-extrabold tracking-tight italic">Resume & Timeline</h3>
-            </div>
-            
-            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-brandGold before:via-brandBlue before:to-transparent">
-                
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-right">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-brandGold bg-brandDark text-brandGold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                        <i class="fa-solid fa-briefcase text-xs"></i>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-brandNavy border border-brandBlue shadow-xl">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-brandYellow">Lead Program Manager</div>
-                            <time class="mono text-[10px] text-brandGold">2021 – Present</time>
-                        </div>
-                        <div class="text-white font-bold mb-2 uppercase text-xs">Fortune 500 Tech Corp</div>
-                        <p class="text-slate-400 text-sm italic">Orchestrating the data roadmap for global engineering teams.</p>
-                    </div>
-                </div>
-
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-left">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-brandBlue bg-brandDark text-brandBlue shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                        <i class="fa-solid fa-code text-xs"></i>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-brandNavy border border-brandBlue shadow-xl">
-                        <div class="flex items-center justify-between space-x-2 mb-1">
-                            <div class="font-bold text-brandYellow">Senior Data Analyst</div>
-                            <time class="mono text-[10px] text-brandGold">2018 – 2021</time>
-                        </div>
-                        <div class="text-white font-bold mb-2 uppercase text-xs">Strategic Data Group</div>
-                        <p class="text-slate-400 text-sm italic">Pioneered ETL automation workflows and BI standardizations.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </section>
 
     <footer class="bg-brandDark border-t border-brandBlue py-10 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-brandGold font-bold uppercase tracking-tighter">Jeremy Manalo</div>
-            <div class="text-slate-500 text-xs mono">© 2025 SYSTEM_VERSION: 4.2.0 // DEPLOY_SUCCESSFUL</div>
+            <div class="text-slate-500 text-xs mono">© 2025 // DEPLOY_SUCCESSFUL</div>
             <div class="flex gap-6">
                 <a href="#" class="text-slate-400 hover:text-brandGold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" class="text-slate-400 hover:text-brandGold transition-colors"><i class="fa-brands fa-github"></i></a>
@@ -217,23 +261,11 @@
     </footer>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            once: false,
-            mirror: true,
-            duration: 800,
-        });
-
-        // Simple Enterprise Tracking Placeholder Script
-        // This attaches metadata to project clicks for your analytics tracking
-        document.querySelectorAll('[data-project-id]').forEach(tile => {
-            tile.addEventListener('click', () => {
-                const pId = tile.getAttribute('data-project-id');
-                const cat = tile.getAttribute('data-analytics-category');
-                console.log(`[Enterprise Analytics] Event: Project_View | ID: ${pId} | Category: ${cat}`);
-                // In production, send this to Google Analytics or Segment
-            });
-        });
+        AOS.init({ once: false, duration: 800 });
+        function scrollProjects(amount) {
+            const container = document.getElementById('projectContainer');
+            container.scrollBy({ left: amount, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
