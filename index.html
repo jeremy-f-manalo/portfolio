@@ -3,220 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeremy Manalo | Data Engineering & Analytics</title>
+    <title>Jeremy Manalo | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        darkNavy: '#0b1e33',
-                        deepBlue: '#013c58',
-                        oceanBlue: '#00537a',
-                        brandYellow: '#f5a201',
-                        brightYellow: '#ffba42',
+                        brandDark: '#0b1e33',
+                        brandNavy: '#013c58',
+                        brandBlue: '#00537a',
+                        brandGold: '#f5a201',
+                        brandYellow: '#ffba42',
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0b1e33; color: white; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap');
         
-        /* Custom Scrollbar for Project Gallery */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        .glass-nav {
-            background: rgba(11, 30, 51, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #0b1e33;
+            color: white;
         }
+        .mono { font-family: 'JetBrains Mono', monospace; }
         
-        .project-card {
-            min-width: 350px;
-            scroll-snap-align: center;
+        /* Custom Scroll Snap Gallery */
+        .snap-x {
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        .snap-x::-webkit-scrollbar { display: none; }
+        .snap-center { scroll-snap-align: center; }
+
+        /* Smooth section transitions */
+        section { min-height: 80vh; display: flex; align-items: center; }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass-nav top-0 left-0">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-brandYellow uppercase">Jeremy Manalo</a>
-            <div class="hidden md:flex space-x-10 text-xs font-semibold uppercase tracking-widest text-slate-300">
-                <a href="#about" class="hover:text-brandYellow transition-colors">About</a>
-                <a href="#projects" class="hover:text-brandYellow transition-colors">Projects</a>
-                <a href="#resume" class="hover:text-brandYellow transition-colors">Resume</a>
-                <a href="mailto:contact@jeremymanalo.com" class="text-brandYellow border border-brandYellow px-4 py-1.5 rounded-full hover:bg-brandYellow hover:text-darkNavy transition-all">Contact</a>
+    <nav class="fixed w-full z-50 bg-brandDark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-extrabold tracking-tighter text-brandGold uppercase">Jeremy Manalo</a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-brandGold transition-colors">About</a>
+                <a href="#projects" class="hover:text-brandGold transition-colors">Projects</a>
+                <a href="#resume" class="hover:text-brandGold transition-colors">Resume</a>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="min-h-screen flex items-center pt-20 px-8">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16 items-center">
-            
-            <div class="lg:col-span-2 flex justify-center" data-aos="fade-up" data-aos-duration="1000">
-                <div class="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-oceanBlue to-deepBlue flex items-center justify-center border border-white/10 shadow-2xl">
-                    <i class="fa-solid fa-microchip text-8xl text-brandYellow/80"></i>
-                </div>
-            </div>
-
-            <div class="lg:col-span-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+    <section id="about" class="pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-brandGold mono text-sm font-bold mb-4 tracking-widest uppercase">// Professional Profile</h2>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
                     Data Engineering and Analytics <span class="text-brandYellow">Program Manager</span>
                 </h1>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl">
-                    I architect scalable data infrastructures and lead high-impact analytics programs. 
-                    I bridge the gap between complex engineering stacks and strategic business intelligence.
+                <p class="text-slate-400 text-lg leading-relaxed mb-8 max-w-xl">
+                    Architecting scalable data ecosystems and leading cross-functional teams to deliver enterprise-grade analytics. I specialize in bridging the gap between complex engineering requirements and executive-level business intelligence.
                 </p>
-                <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
-                    <div>
-                        <h4 class="text-brandYellow font-bold mb-2">Strategy</h4>
-                        <p class="text-sm text-slate-400">Program Management, Lifecycle Governance, Stakeholder ROI</p>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-2 px-4 py-2 bg-brandNavy rounded-lg border border-brandBlue">
+                        <i class="fa-solid fa-microchip text-brandGold"></i>
+                        <span class="text-xs font-bold uppercase tracking-tighter">Infrastructure</span>
                     </div>
-                    <div>
-                        <h4 class="text-brandYellow font-bold mb-2">Engineering</h4>
-                        <p class="text-sm text-slate-400">ETL Pipelines, Data Warehousing, Python, SQL, Cloud Architecture</p>
+                    <div class="flex items-center gap-2 px-4 py-2 bg-brandNavy rounded-lg border border-brandBlue">
+                        <i class="fa-solid fa-chart-line text-brandGold"></i>
+                        <span class="text-xs font-bold uppercase tracking-tighter">Governance</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="border-white/5 mx-auto max-w-6xl">
-
-    <section id="projects" class="py-32 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-8 mb-12" data-aos="fade-right">
-            <h2 class="text-sm font-bold text-brandYellow uppercase tracking-[0.3em] mb-4 underline decoration-2 underline-offset-8">Featured Projects</h2>
-            <h3 class="text-4xl font-bold">The Innovation Gallery</h3>
-        </div>
-
-        <div class="flex overflow-x-auto hide-scrollbar gap-8 px-[10vw] pb-12 snap-x snap-mandatory" data-aos="fade-up">
-            
-            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
-                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
-                    <i class="fa-solid fa-database text-6xl"></i>
-                </div>
-                <h4 class="text-2xl font-bold mb-3">Cloud Data Warehouse Migration</h4>
-                <p class="text-slate-400 text-sm mb-6">Managed the end-to-end migration of legacy on-prem systems to BigQuery, improving query performance by 40%.</p>
-                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <span class="bg-darkNavy px-3 py-1 rounded">GCP</span>
-                    <span class="bg-darkNavy px-3 py-1 rounded">SQL</span>
-                </div>
-            </div>
-
-            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
-                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
-                    <i class="fa-solid fa-chart-line text-6xl"></i>
-                </div>
-                <h4 class="text-2xl font-bold mb-3">Enterprise BI Ecosystem</h4>
-                <p class="text-slate-400 text-sm mb-6">Built a suite of 20+ automated Tableau dashboards providing real-time KPI tracking for C-suite executives.</p>
-                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <span class="bg-darkNavy px-3 py-1 rounded">Tableau</span>
-                    <span class="bg-darkNavy px-3 py-1 rounded">Python</span>
-                </div>
-            </div>
-
-            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
-                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
-                    <i class="fa-solid fa-gears text-6xl"></i>
-                </div>
-                <h4 class="text-2xl font-bold mb-3">Automated Pipeline Governance</h4>
-                <p class="text-slate-400 text-sm mb-6">Developed a Python-based auditing tool to monitor data quality across 200+ ETL pipelines daily.</p>
-                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <span class="bg-darkNavy px-3 py-1 rounded">DevOps</span>
-                    <span class="bg-darkNavy px-3 py-1 rounded">Pandas</span>
-                </div>
-            </div>
-
-            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
-                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
-                    <i class="fa-solid fa-shield-halved text-6xl"></i>
-                </div>
-                <h4 class="text-2xl font-bold mb-3">Security & Compliance Audit</h4>
-                <p class="text-slate-400 text-sm mb-6">Program managed a security overhaul ensuring GDPR/CCPA compliance for all data storage units.</p>
-                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
-                    <span class="bg-darkNavy px-3 py-1 rounded">GRC</span>
-                    <span class="bg-darkNavy px-3 py-1 rounded">Audit</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="text-center text-slate-500 mt-4 text-xs font-bold uppercase tracking-widest">
-            <i class="fa-solid fa-arrow-left mr-2"></i> Swipe to explore <i class="fa-solid fa-arrow-right ml-2"></i>
-        </div>
-    </section>
-
-    <section id="resume" class="py-32 px-8 bg-gradient-to-b from-darkNavy to-deepBlue">
-        <div class="max-w-4xl mx-auto">
-            <div class="mb-16 text-center" data-aos="fade-up">
-                <h2 class="text-sm font-bold text-brandYellow uppercase tracking-[0.3em] mb-4">Professional Record</h2>
-                <h3 class="text-4xl font-bold">Experience & Education</h3>
             </div>
             
-            <div class="space-y-16 relative">
-                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 hidden md:block"></div>
-
-                <div class="relative flex flex-col md:flex-row gap-8" data-aos="fade-up">
-                    <div class="md:w-1/2 md:text-right">
-                        <p class="text-brandYellow font-bold mb-1">2021 — Present</p>
-                        <h4 class="text-xl font-bold">TechFlow Solutions</h4>
+            <div class="relative flex justify-center items-center" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-dashed border-brandBlue flex items-center justify-center relative">
+                    <div class="w-48 h-48 md:w-60 md:h-60 bg-gradient-to-tr from-brandNavy to-brandBlue rounded-full flex items-center justify-center shadow-2xl shadow-brandBlue/20">
+                        <i class="fa-solid fa-database text-6xl text-brandGold opacity-80"></i>
                     </div>
-                    <div class="md:w-1/2">
-                        <p class="text-slate-300">Leading the data strategy for cross-functional engineering teams, managing budgets of $2M+, and ensuring 99.9% data reliability for core services.</p>
-                    </div>
+                    <div class="absolute top-0 right-10 w-4 h-4 bg-brandYellow rounded-full animate-pulse"></div>
+                    <div class="absolute bottom-10 left-0 w-3 h-3 bg-brandGold rounded-full animate-bounce"></div>
                 </div>
-
-                <div class="relative flex flex-col md:flex-row gap-8" data-aos="fade-up">
-                    <div class="md:w-1/2 md:text-right">
-                        <p class="text-brandYellow font-bold mb-1">2019 — 2021</p>
-                        <h4 class="text-xl font-bold">Global Insight Partners</h4>
-                    </div>
-                    <div class="md:w-1/2">
-                        <p class="text-slate-300">Directed analytics programs for retail clients, turning raw sales data into market expansion plans across 12 territories.</p>
-                    </div>
-                </div>
-
-                <div class="relative flex flex-col md:flex-row gap-8 pt-12 border-t border-white/10" data-aos="fade-up">
-                    <div class="md:w-1/2 md:text-right">
-                        <p class="text-brandYellow font-bold mb-1">M.S. Data Science</p>
-                        <h4 class="text-xl font-bold">University of Technology</h4>
-                    </div>
-                    <div class="md:w-1/2">
-                        <p class="text-slate-300 italic uppercase text-xs tracking-widest mt-2">Class of 2018 | Honors Graduate</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-20 text-center" data-aos="zoom-in">
-                <a href="#" class="inline-block bg-brandYellow text-darkNavy px-10 py-4 rounded-xl font-bold hover:scale-105 hover:bg-brightYellow transition-all duration-300">
-                    <i class="fa-solid fa-file-pdf mr-2"></i> Download Full Resume
-                </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/5 bg-darkNavy text-center">
-        <div class="max-w-6xl mx-auto px-8">
-            <h2 class="text-2xl font-bold text-white mb-6">Jeremy Manalo</h2>
-            <div class="flex justify-center space-x-8 mb-10">
-                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
-                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+    <section id="projects" class="py-20 bg-brandNavy/30 block">
+        <div class="max-w-7xl mx-auto px-6 mb-10">
+            <div class="flex justify-between items-end">
+                <div data-aos="fade-right">
+                    <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase italic">01. Portfolios</h2>
+                    <h3 class="text-4xl font-extrabold tracking-tight italic">Project Gallery</h3>
+                </div>
+                <p class="text-slate-400 text-sm hidden md:block italic">Scroll horizontally to explore &rarr;</p>
             </div>
-            <p class="text-slate-600 text-sm">&copy; 2025 Jeremy Manalo. Programmed for clarity.</p>
+        </div>
+
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 pb-10 max-w-7xl mx-auto">
+            
+            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-01" data-analytics-category="Engineering">
+                <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
+                            <i class="fa-solid fa-layer-group text-2xl group-hover:text-brandDark"></i>
+                        </div>
+                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-01</span>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Enterprise Data Lakehouse Migration</h4>
+                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Migrated legacy siloed architecture to a unified Delta Lake on Databricks, serving 500+ daily BI users.</p>
+                    <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Azure</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">PySpark</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Governance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-02" data-analytics-category="Management">
+                <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
+                            <i class="fa-solid fa-diagram-project text-2xl group-hover:text-brandDark"></i>
+                        </div>
+                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-02</span>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Automated Data Compliance Engine</h4>
+                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Built an automated PII detection and masking pipeline for HIPAA/GDPR compliance across 14 global markets.</p>
+                    <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Security</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Python</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">DevOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-none w-full md:w-[450px] snap-center" data-project-id="PRJ-2025-03" data-analytics-category="Analytics">
+                <div class="bg-brandDark border border-brandBlue rounded-3xl p-8 hover:border-brandGold transition-all duration-500 h-full flex flex-col group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-brandNavy rounded-2xl group-hover:bg-brandGold transition-colors">
+                            <i class="fa-solid fa-chart-pie text-2xl group-hover:text-brandDark"></i>
+                        </div>
+                        <span class="mono text-[10px] text-brandGold border border-brandGold/30 px-2 py-1 rounded">ID: 2025-03</span>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Supply Chain Predictive Analytics</h4>
+                    <p class="text-slate-400 text-sm flex-grow leading-relaxed">Forecasted inventory requirements with 94% accuracy using ensemble learning, saving $2M in annual overhead.</p>
+                    <div class="mt-8 pt-6 border-t border-brandBlue flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Scikit-Learn</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">SQL</span>
+                        <span class="px-3 py-1 bg-brandBlue/30 text-[10px] font-bold uppercase rounded">Tableau</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="resume" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto w-full">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-brandGold mono text-sm font-bold mb-2 tracking-widest uppercase">02. Career</h2>
+                <h3 class="text-4xl font-extrabold tracking-tight italic">Resume & Timeline</h3>
+            </div>
+            
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-brandGold before:via-brandBlue before:to-transparent">
+                
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-right">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-brandGold bg-brandDark text-brandGold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-brandNavy border border-brandBlue shadow-xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-brandYellow">Lead Program Manager</div>
+                            <time class="mono text-[10px] text-brandGold">2021 – Present</time>
+                        </div>
+                        <div class="text-white font-bold mb-2 uppercase text-xs">Fortune 500 Tech Corp</div>
+                        <p class="text-slate-400 text-sm italic">Orchestrating the data roadmap for global engineering teams.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-left">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-brandBlue bg-brandDark text-brandBlue shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-code text-xs"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-brandNavy border border-brandBlue shadow-xl">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-brandYellow">Senior Data Analyst</div>
+                            <time class="mono text-[10px] text-brandGold">2018 – 2021</time>
+                        </div>
+                        <div class="text-white font-bold mb-2 uppercase text-xs">Strategic Data Group</div>
+                        <p class="text-slate-400 text-sm italic">Pioneered ETL automation workflows and BI standardizations.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brandDark border-t border-brandBlue py-10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-brandGold font-bold uppercase tracking-tighter">Jeremy Manalo</div>
+            <div class="text-slate-500 text-xs mono">© 2025 SYSTEM_VERSION: 4.2.0 // DEPLOY_SUCCESSFUL</div>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-brandGold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brandGold transition-colors"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </footer>
 
     <script>
+        // Initialize AOS
         AOS.init({
-            once: true,
-            easing: 'ease-out-quart'
+            once: false,
+            mirror: true,
+            duration: 800,
+        });
+
+        // Simple Enterprise Tracking Placeholder Script
+        // This attaches metadata to project clicks for your analytics tracking
+        document.querySelectorAll('[data-project-id]').forEach(tile => {
+            tile.addEventListener('click', () => {
+                const pId = tile.getAttribute('data-project-id');
+                const cat = tile.getAttribute('data-analytics-category');
+                console.log(`[Enterprise Analytics] Event: Project_View | ID: ${pId} | Category: ${cat}`);
+                // In production, send this to Google Analytics or Segment
+            });
         });
     </script>
 </body>
