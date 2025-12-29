@@ -8,188 +8,215 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkNavy: '#0b1e33',
+                        deepBlue: '#013c58',
+                        oceanBlue: '#00537a',
+                        brandYellow: '#f5a201',
+                        brightYellow: '#ffba42',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b1e33; color: white; }
         
-        :root {
-            --dark-navy: #0b1e33;
-            --mid-blue: #013c58;
-            --accent-blue: #00537a;
-            --gold: #f5a201;
-            --light-gold: #ffba42;
-        }
-
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--dark-navy);
-            color: #ffffff;
-        }
-        .mono { font-family: 'Fira Code', monospace; }
+        /* Custom Scrollbar for Project Gallery */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        .bg-navy { background-color: var(--dark-navy); }
-        .bg-mid-blue { background-color: var(--mid-blue); }
-        .text-gold { color: var(--gold); }
-        .bg-gold { background-color: var(--gold); }
-        .border-gold { border-color: var(--gold); }
-        
-        .glass-nav { 
+        .glass-nav {
             background: rgba(11, 30, 51, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Apple-style Reveal */
-        .reveal-text {
-            background: linear-gradient(to right, #fff, #fff) no-repeat;
-            background-clip: text;
-            background-size: 0% 100%;
-            transition: background-size 1s;
+        
+        .project-card {
+            min-width: 350px;
+            scroll-snap-align: center;
         }
     </style>
 </head>
-<body class="selection:bg-yellow-500/30">
+<body class="overflow-x-hidden">
 
     <nav class="fixed w-full z-50 glass-nav top-0 left-0">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-white uppercase">Jeremy Manalo</a>
-            <div class="hidden md:flex space-x-10 text-sm font-medium tracking-wide">
-                <a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a>
-                <a href="#projects" class="text-slate-300 hover:text-white transition-colors">Projects</a>
-                <a href="#resume" class="text-slate-300 hover:text-white transition-colors">Resume</a>
-                <a href="mailto:contact@jeremymanalo.com" class="text-gold hover:text-white transition-colors italic">Get in touch &rarr;</a>
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-brandYellow uppercase">Jeremy Manalo</a>
+            <div class="hidden md:flex space-x-10 text-xs font-semibold uppercase tracking-widest text-slate-300">
+                <a href="#about" class="hover:text-brandYellow transition-colors">About</a>
+                <a href="#projects" class="hover:text-brandYellow transition-colors">Projects</a>
+                <a href="#resume" class="hover:text-brandYellow transition-colors">Resume</a>
+                <a href="mailto:contact@jeremymanalo.com" class="text-brandYellow border border-brandYellow px-4 py-1.5 rounded-full hover:bg-brandYellow hover:text-darkNavy transition-all">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-48 pb-24 px-6 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1200">
-            <h1 class="text-5xl md:text-8xl font-bold tracking-tight text-white leading-tight">
-                Data Engineering and <br/>
-                <span class="text-gold">Analytics Program Manager</span>
-            </h1>
-            <p class="mt-12 text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
-                Architecting scalable data infrastructure and leading high-impact analytics initiatives that bridge the gap between engineering and business outcomes.
-            </p>
-            <div class="mt-16 flex justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center animate-bounce">
-                    <i class="fa-solid fa-arrow-down text-slate-500"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="about" class="py-32 px-6 bg-mid-blue">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="flex justify-center" data-aos="zoom-in-right">
-                <div class="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-[#00537a] flex items-center justify-center border border-white/10 shadow-2xl relative">
-                    <i class="fa-solid fa-microchip text-7xl text-gold"></i>
-                    <div class="absolute inset-0 border-2 border-gold/20 rounded-3xl transform rotate-6 -z-10"></div>
-                </div>
-            </div>
-            <div data-aos="fade-left">
-                <h2 class="text-4xl font-bold mb-8 italic">Curating data systems with precision.</h2>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                    I specialize in managing end-to-end data lifecycles. From designing robust ETL pipelines to establishing governance frameworks, I ensure that data isn't just stored—it's leveraged.
-                </p>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="border-l-2 border-gold pl-4">
-                        <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-1">Architecture</h4>
-                        <p class="text-sm text-slate-400">AWS/Azure, Snowflake, Databricks</p>
-                    </div>
-                    <div class="border-l-2 border-gold pl-4">
-                        <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-1">Methodology</h4>
-                        <p class="text-sm text-slate-400">Agile, Scrum, DataOps</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-32 px-6 bg-navy">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-20" data-aos="fade-up">
-                <div>
-                    <h2 class="text-5xl font-bold tracking-tight">Key Initiatives</h2>
-                    <div class="h-1 w-24 bg-gold mt-4"></div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group relative bg-[#013c58] rounded-3xl p-8 border border-white/5 hover:border-gold/50 transition-all duration-500" data-aos="fade-up">
-                    <div class="flex justify-between items-start mb-8">
-                        <i class="fa-solid fa-database text-4xl text-gold"></i>
-                        <span class="mono text-[10px] text-slate-400 border border-slate-600 px-3 py-1 rounded-full uppercase">Enterprise</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Cloud Data Migration</h3>
-                    <p class="text-slate-400 mb-8">Led the strategic transition of legacy on-prem systems to a Snowflake-based cloud lakehouse architecture for a Fortune 500 client.</p>
-                    <a href="#" class="text-gold font-semibold group-hover:translate-x-2 inline-block transition-transform">Explore Strategy &rarr;</a>
-                </div>
-
-                <div class="group relative bg-[#013c58] rounded-3xl p-8 border border-white/5 hover:border-gold/50 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-between items-start mb-8">
-                        <i class="fa-solid fa-chart-line text-4xl text-gold"></i>
-                        <span class="mono text-[10px] text-slate-400 border border-slate-600 px-3 py-1 rounded-full uppercase">Analytics</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Executive BI Strategy</h3>
-                    <p class="text-slate-400 mb-8">Developed a unified KPI framework and PowerBI ecosystem for real-time tracking of global supply chain health.</p>
-                    <a href="#" class="text-gold font-semibold group-hover:translate-x-2 inline-block transition-transform">View Results &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume" class="py-32 px-6 bg-white text-navy">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl font-bold mb-20 text-center" data-aos="fade-down">Experience</h2>
+    <section id="about" class="min-h-screen flex items-center pt-20 px-8">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16 items-center">
             
-            <div class="space-y-16">
-                <div class="flex flex-col md:flex-row gap-8" data-aos="fade-right">
-                    <div class="md:w-1/3">
-                        <p class="mono text-accent-blue font-bold text-lg underline decoration-gold decoration-2 underline-offset-4">2021 — Present</p>
-                        <p class="text-xs text-slate-500 uppercase tracking-widest mt-2 font-bold">Principal Program Manager</p>
-                    </div>
-                    <div class="md:w-2/3 border-l border-slate-200 pl-8">
-                        <h4 class="text-2xl font-bold mb-2">TechFlow Global</h4>
-                        <p class="text-slate-600">Directing a cross-functional team of 15 engineers to deliver scalable data products and automated ETL pipelines.</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-8 pt-16 border-t border-slate-100" data-aos="fade-right">
-                    <div class="md:w-1/3">
-                        <p class="mono text-accent-blue font-bold text-lg underline decoration-gold decoration-2 underline-offset-4">Education</p>
-                    </div>
-                    <div class="md:w-2/3 border-l border-slate-200 pl-8">
-                        <h4 class="text-2xl font-bold mb-2">University of Technology</h4>
-                        <p class="text-slate-600">Master of Science in Data Engineering & Analytics Management.</p>
-                    </div>
+            <div class="lg:col-span-2 flex justify-center" data-aos="fade-up" data-aos-duration="1000">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-oceanBlue to-deepBlue flex items-center justify-center border border-white/10 shadow-2xl">
+                    <i class="fa-solid fa-microchip text-8xl text-brandYellow/80"></i>
                 </div>
             </div>
 
-            <div class="mt-24 text-center" data-aos="zoom-in">
-                <button class="bg-navy text-white px-12 py-5 rounded-full font-bold shadow-2xl hover:bg-gold hover:text-navy transition-all duration-300">
-                    Download CV <i class="fa-solid fa-file-pdf ml-2"></i>
-                </button>
+            <div class="lg:col-span-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Data Engineering and Analytics <span class="text-brandYellow">Program Manager</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl">
+                    I architect scalable data infrastructures and lead high-impact analytics programs. 
+                    I bridge the gap between complex engineering stacks and strategic business intelligence.
+                </p>
+                <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
+                    <div>
+                        <h4 class="text-brandYellow font-bold mb-2">Strategy</h4>
+                        <p class="text-sm text-slate-400">Program Management, Lifecycle Governance, Stakeholder ROI</p>
+                    </div>
+                    <div>
+                        <h4 class="text-brandYellow font-bold mb-2">Engineering</h4>
+                        <p class="text-sm text-slate-400">ETL Pipelines, Data Warehousing, Python, SQL, Cloud Architecture</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-navy text-slate-500 py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="text-sm font-medium tracking-tight uppercase">Jeremy Manalo &copy; 2025</p>
-            <div class="flex space-x-8 mt-6 md:mt-0">
-                <a href="#" class="hover:text-gold transition-colors italic">LinkedIn</a>
-                <a href="#" class="hover:text-gold transition-colors italic">GitHub</a>
-                <a href="#" class="hover:text-gold transition-colors italic">Twitter</a>
+    <hr class="border-white/5 mx-auto max-w-6xl">
+
+    <section id="projects" class="py-32 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-8 mb-12" data-aos="fade-right">
+            <h2 class="text-sm font-bold text-brandYellow uppercase tracking-[0.3em] mb-4 underline decoration-2 underline-offset-8">Featured Projects</h2>
+            <h3 class="text-4xl font-bold">The Innovation Gallery</h3>
+        </div>
+
+        <div class="flex overflow-x-auto hide-scrollbar gap-8 px-[10vw] pb-12 snap-x snap-mandatory" data-aos="fade-up">
+            
+            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
+                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
+                    <i class="fa-solid fa-database text-6xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Cloud Data Warehouse Migration</h4>
+                <p class="text-slate-400 text-sm mb-6">Managed the end-to-end migration of legacy on-prem systems to BigQuery, improving query performance by 40%.</p>
+                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="bg-darkNavy px-3 py-1 rounded">GCP</span>
+                    <span class="bg-darkNavy px-3 py-1 rounded">SQL</span>
+                </div>
             </div>
+
+            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
+                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
+                    <i class="fa-solid fa-chart-line text-6xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Enterprise BI Ecosystem</h4>
+                <p class="text-slate-400 text-sm mb-6">Built a suite of 20+ automated Tableau dashboards providing real-time KPI tracking for C-suite executives.</p>
+                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="bg-darkNavy px-3 py-1 rounded">Tableau</span>
+                    <span class="bg-darkNavy px-3 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
+                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
+                    <i class="fa-solid fa-gears text-6xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Automated Pipeline Governance</h4>
+                <p class="text-slate-400 text-sm mb-6">Developed a Python-based auditing tool to monitor data quality across 200+ ETL pipelines daily.</p>
+                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="bg-darkNavy px-3 py-1 rounded">DevOps</span>
+                    <span class="bg-darkNavy px-3 py-1 rounded">Pandas</span>
+                </div>
+            </div>
+
+            <div class="project-card bg-deepBlue/50 p-8 rounded-3xl border border-white/10 hover:border-brandYellow/50 transition-all group shadow-2xl">
+                <div class="h-48 mb-6 rounded-2xl bg-darkNavy flex items-center justify-center text-oceanBlue group-hover:text-brandYellow transition-colors">
+                    <i class="fa-solid fa-shield-halved text-6xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold mb-3">Security & Compliance Audit</h4>
+                <p class="text-slate-400 text-sm mb-6">Program managed a security overhaul ensuring GDPR/CCPA compliance for all data storage units.</p>
+                <div class="flex gap-3 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="bg-darkNavy px-3 py-1 rounded">GRC</span>
+                    <span class="bg-darkNavy px-3 py-1 rounded">Audit</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center text-slate-500 mt-4 text-xs font-bold uppercase tracking-widest">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Swipe to explore <i class="fa-solid fa-arrow-right ml-2"></i>
+        </div>
+    </section>
+
+    <section id="resume" class="py-32 px-8 bg-gradient-to-b from-darkNavy to-deepBlue">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-16 text-center" data-aos="fade-up">
+                <h2 class="text-sm font-bold text-brandYellow uppercase tracking-[0.3em] mb-4">Professional Record</h2>
+                <h3 class="text-4xl font-bold">Experience & Education</h3>
+            </div>
+            
+            <div class="space-y-16 relative">
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 hidden md:block"></div>
+
+                <div class="relative flex flex-col md:flex-row gap-8" data-aos="fade-up">
+                    <div class="md:w-1/2 md:text-right">
+                        <p class="text-brandYellow font-bold mb-1">2021 — Present</p>
+                        <h4 class="text-xl font-bold">TechFlow Solutions</h4>
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-slate-300">Leading the data strategy for cross-functional engineering teams, managing budgets of $2M+, and ensuring 99.9% data reliability for core services.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row gap-8" data-aos="fade-up">
+                    <div class="md:w-1/2 md:text-right">
+                        <p class="text-brandYellow font-bold mb-1">2019 — 2021</p>
+                        <h4 class="text-xl font-bold">Global Insight Partners</h4>
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-slate-300">Directed analytics programs for retail clients, turning raw sales data into market expansion plans across 12 territories.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row gap-8 pt-12 border-t border-white/10" data-aos="fade-up">
+                    <div class="md:w-1/2 md:text-right">
+                        <p class="text-brandYellow font-bold mb-1">M.S. Data Science</p>
+                        <h4 class="text-xl font-bold">University of Technology</h4>
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-slate-300 italic uppercase text-xs tracking-widest mt-2">Class of 2018 | Honors Graduate</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center" data-aos="zoom-in">
+                <a href="#" class="inline-block bg-brandYellow text-darkNavy px-10 py-4 rounded-xl font-bold hover:scale-105 hover:bg-brightYellow transition-all duration-300">
+                    <i class="fa-solid fa-file-pdf mr-2"></i> Download Full Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 bg-darkNavy text-center">
+        <div class="max-w-6xl mx-auto px-8">
+            <h2 class="text-2xl font-bold text-white mb-6">Jeremy Manalo</h2>
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-slate-500 hover:text-brandYellow transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+            <p class="text-slate-600 text-sm">&copy; 2025 Jeremy Manalo. Programmed for clarity.</p>
         </div>
     </footer>
 
     <script>
-        // Initialize AOS animations
         AOS.init({
-            duration: 1000,
             once: true,
-            offset: 100
+            easing: 'ease-out-quart'
         });
     </script>
 </body>
